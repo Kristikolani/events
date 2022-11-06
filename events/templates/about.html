@@ -5,8 +5,296 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About page</title>
+    <style>
+ 
+        /* Styling the body */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+          
+        /* Styling section, giving background
+            image and dimensions */
+        section {
+            width: 100%;
+            height: 100vh;
+            background:
+            url('https://wallpaper.dog/large/20497496.jpg');
+            background-size: cover;
+        }
+          
+        /* Styling the left floating section */
+        section .leftBox {
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+          
+        /* Styling the background of
+            left floating section */
+        section .leftBox .content {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            transition: .5s;
+        }
+          
+        /* Styling the hover effect 
+            of left floating section */
+        section .leftBox .content:hover {
+            background: #e91e63;
+        }
+          
+        /* Styling the header of left
+            floating section */
+        section .leftBox .content h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+          
+        /* Styling the paragraph of
+            left floating section */
+        section .leftBox .content p {
+            margin: 10px 0 0;
+            padding: 0;
+        }
+          
+        /* Styling the three events section */
+        section .events {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            float: right;
+            box-sizing: border-box;
+        }
+          
+        /* Styling the links of
+        the events section */
+        section .events ul {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+          
+        /* Styling the lists of the event section */
+        section .events ul li {
+            list-style: none;
+            background: #fff;
+            box-sizing: border-box;
+            height: 200px;
+            margin: 15px 0;
+        }
+          
+        /* Styling the time class of events section */
+        section .events ul li .time {
+            position: relative;
+            padding: 20px;
+            background: #262626;
+            box-sizing: border-box;
+            width: 30%;
+            height: 100%;
+            float: left;
+            text-align: center;
+            transition: .5s;
+        }
+          
+        /* Styling the hover effect
+            of events section */
+        section .events ul li:hover .time {
+            background: #e91e63;
+        }
+          
+        /* Styling the header of time
+            class of events section */
+        section .events ul li .time h2 {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 60px;
+            line-height: 30px;
+        }
+          
+        /* Styling the texts of time
+        class of events section */
+        section .events ul li .time h2 span {
+            font-size: 30px;
+        }
+          
+        /* Styling the details
+        class of events section */
+        section .events ul li .details {
+            padding: 20px;
+            background: #fff;
+            box-sizing: border-box;
+            width: 70%;
+            height: 100%;
+            float: left;
+        }
+          
+        /* Styling the header of the
+        details class of events section */
+        section .events ul li .details h3 {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+          
+        /* Styling the lists of details
+        class of events section */
+        section .events ul li .details p {
+            position: relative;
+            margin: 10px 0 0;
+            padding: 0;
+            font-size: 16px;
+        }
+          
+        /* Styling the links of details
+        class of events section */
+        section .events ul li .details a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1.5px solid #262626;
+            margin-top: 8px;
+            font-size: 18px;
+            transition: .5s;
+        }
+          
+        /* Styling the details class's hover effect */
+        section .events ul li .details a:hover {
+            background: #e91e63;
+            color: #fff;
+            border-color: #e91e63;
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>This is the about page</h1>
+    <h1>SAKA Events</h1>
+    <section>
+        <div class="leftBox">
+            <div class="content">
+                <h1>
+                    Events and Shows
+                </h1>
+                 
+<p>
+                            No time or ideas for your next event? 
+                            And of course it has to be a TOP event 
+                            that everyone talks about for a long time? 
+                            Let JADA events make a proposal, we guarantee 
+                            an inspiring dimension for your precious budget.
+                            
+                            Our work ethic?
+                            We organise tailor-made events, fully adapted to your wishes. 
+                            We make you a proposal and give the necessary advice 
+                            in an open conversation and always get the best 
+                            out of the planned event, whether this is for a low or high budget.
+                            You can reach out to us for staff parties, family days, 
+                            incentives, fairs, customer events, an open door event, 
+                            network events, conferences, jubilees, etc. Our goal remains 
+                            to generate 'positive emotions', because nothing is as strong as a 
+                            blissful feeling around your product / company / service. 
+                            In short: We Event Your Story
+    
+                </p>
+ 
+            </div>
+        </div>
+  
+        <div class="events">
+            <ul>
+                <li>
+                    <div class="time">
+                        <h2>
+                            15 <br><span>November</span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            Decorento Party Supplies
+                        </h3>
+                         
+<p>
+                        Decorento Party Supplies is an expert catering 
+                        company based in the heart of Davie, Florida. 
+                        We offer beautiful culinary experiences with a 
+                        fusion cuisine method that combines Caribbean, 
+                        European and Asian. 
+                    
+    
+                        </p>
+ 
+  
+                        <a href="#">View Details</a>
+                    </div>
+                    <div style="clear: both;"></div>
+                </li>
+  
+                <li>
+                    <div class="time">
+                        <h2>
+                            27 <br><span>December</span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            Fruit & Chocolate Sensations
+                        </h3>
+                         
+<p>
+                        Our Company was the first in years to start 
+                        Chocolate Fountains when nobody knew 
+                        what it was? Years later we are still here 
+                        today for all types of events. We Cater from 
+                        25 Guests to 800 Guests we cab make it happen!
+    
+                        </p>
+ 
+                        <a href="#">View Details</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                </li>
+  
+                <li>
+                    <div class="time">
+                        <h2>
+                            12 <br><span>January</span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            Traiteur Magnus
+                        </h3>
+                         
+<p>
+                        For many years, Salons Magnus has been a well-known address 
+                        for style and perfection in the Antwerp caterer world. 
+                        Behind the imposing facade of the stately mansion on the Albert Park, 
+                        hides a unique banquet. 
+    
+                        </p>
+ 
+  
+                        <a href="#">View Details</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                </li>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
