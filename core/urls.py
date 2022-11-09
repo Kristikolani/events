@@ -18,11 +18,16 @@ from django.urls import path
 from events import views as eventsViews
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth.views import LoginView, LogoutView
 
+from accounts import views as accountsView
 
 urlpatterns = [
+    path("register/", accountsView.registerPage, name="register"),
     path("admin/", admin.site.urls),
     path("", eventsViews.home, name='home'),
     path("about/", eventsViews.about, name='about'),
+    path("events/", eventsViews.events, name='events'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
