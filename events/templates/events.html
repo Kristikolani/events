@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+</head>
+<body>
+  
+
+{% include 'navbar.html' %}
+    <div>
+    <div class="row row-cols-1 row-cols-md-4 g-5 col-sm">
+      {% for event in events %}
+        <div v-for="event in events" class="col">
+          <div class="card">
+            <img class="card-img-top" src="{{ event.image.url }}" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">{{ event.title }}</h5>
+              <p class="card-text">{{ event.description }}</p>
+              <h6>{{ event.date }}</h6>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </body>
+</html>

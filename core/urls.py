@@ -28,6 +28,6 @@ urlpatterns = [
     path("", eventsViews.home, name='home'),
     path("about/", eventsViews.about, name='about'),
     path("events/", eventsViews.events, name='events'),
-
+    path("add_event/", eventsViews.add_event, name="add_event")
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
