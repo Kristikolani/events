@@ -2,6 +2,7 @@
 {% include 'navbar.html' %}
 
 <form method="post" action="">
+    {% csrf_token %}
     {{form}}
 <button type="submit">Register</button>
 </form>
