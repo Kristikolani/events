@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from events import views as eventsViews
+from accounts import views as accountsViews
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
@@ -28,6 +29,7 @@ urlpatterns = [
     path("", eventsViews.home, name='home'),
     path("about/", eventsViews.about, name='about'),
     path("events/", eventsViews.events, name='events'),
-    path("add_event/", eventsViews.add_event, name="add_event")
+    path("add_event/", eventsViews.add_event, name="add_event"),
+    path("profile/", accountsViews.profile, name='profile')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
