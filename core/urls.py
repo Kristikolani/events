@@ -20,16 +20,19 @@ from accounts import views as accountsViews
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
-
-from accounts import views as accountsView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path("register/", accountsView.registerPage, name="register"),
+    path("register/", accountsViews.register, name="register"),
     path("admin/", admin.site.urls),
     path("", eventsViews.home, name='home'),
     path("about/", eventsViews.about, name='about'),
     path("events/", eventsViews.events, name='events'),
     path("add_event/", eventsViews.add_event, name="add_event"),
-    path("profile/", accountsViews.profile, name='profile')
+    path("profile/", accountsViews.profile, name='profile'),
+    path('login/', accountsViews.login, name="login"),
+    path('logout', accountsViews.logout, name="logout"),
+    path('delete/<id>', accountsViews.delete, name="delete"),
+    path('edit/<id>', accountsViews.edit, name="edit"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
-from .models import Event
+from events.forms import EventForm
+from events.models import EventModel
 from django.http import HttpRequest, HttpResponse
+from django.views.generic import CreateView
 
 
 def home(request):
-    events = Event.objects.all()
+    events = EventModel.objects.all()[:3]
     return render(request, 'home.html', {'events': events})
 
 
@@ -13,22 +15,22 @@ def about(request):
 
 
 def events(request):
-    events = Event.objects.all()
+    events = EventModel.objects.all()
     return render(request, 'events.html', {'events': events})
 
 
 def add_event(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
-        form = Event(request.POST)
-        
+        form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             event = form.save(commit=False)
+            event.user = request.user
             event.save()
-            return redirect("event-detail", pk=events.pk)
+            return redirect("/")
     else:
-        form = Event()
+        form = EventForm()
     return render(
         request,
         "event_form.html",
-        context={"form": form},
+        {"form": form},
     )

@@ -1,0 +1,12 @@
+{% include 'base.html' %}
+<form method="POST" >
+    {% csrf_token %}
+    <!-- <span>Email</span> <input type="email"
+    name="email"> -->
+    Update your Data:
+    <input type="text" name="todo" value="{{todo.0.to
+    dos}}" >
+    <!-- {{form}} -->
+    <br>
+    <button class="btn--primary"> Save </button>
+    </form>

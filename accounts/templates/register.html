@@ -1,8 +1,28 @@
-<h3>Register</h3>
-{% include 'navbar.html' %}
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-<form method="post" action="">
-    {% csrf_token %}
-    {{form}}
-<button type="submit">Register</button>
+<body>
+    <a href="{% url 'login' %}" > Login Here </a>
+<h1>Register</h1>
+<form method="POST">
+{% csrf_token %}
+<input placeholder="Name" class="form__field" 
+type="type" name="uname"> <br>
+<input placeholder="Email" class="form__field" 
+type="email" name="email"> <br>
+<input placeholder="Password" class="form__
+field" type="password" name="password1"> <br>
+<input placeholder="Confirm Password" 
+class="form__field" type="password" 
+name="password2"> <br>
+<button class="btn--primary"> Save </button>
 </form>
+</body>
+</html>
