@@ -34,12 +34,12 @@ def register(request):
     if request.method == "POST":
         if request.POST['password1'] == request.POST['password2']:
             try:
-                user = User.objects.get(username=request.POST['uname'])
+                user1 = User.objects.get(username=request.POST['uname'])
                 return render(request, 'register.html', {'error': "Username Has been Taken"})
             except User.DoesNotExist:
-                user = User.objects.create_user(username=request.POST['number'], first_name=request.POST['uname'], email=request.POST['email'], password=request.POST['password1'])
-                user.save()
-                auth.login(request, user)
+                user1 = User.objects.create_user(username=request.POST['number'], first_name=request.POST['uname'], email=request.POST['email'], password=request.POST['password1'])
+                user1.save()
+                auth.login(request, user1)
                 return redirect('/')
         else:
             return render(request, 'register.html', {'error': "Password Dose Not Match"})
@@ -77,6 +77,9 @@ def edit(request, id):
         return render(request, 'edit.html', {'event': event})
 
 
+
+@login_required
 def profile(request):
-    return render(request, "profile.html")
+    user = EventModel.objects.all()[1]
+    return render(request, "profile.html", {"user": user})
 
