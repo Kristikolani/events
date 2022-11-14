@@ -7,7 +7,7 @@ class EventModel(models.Model):
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
-    image = models.ImageField((("picture")), upload_to='event/images/',)
+    image = models.ImageField((("picture")), upload_to='event/images/')
     date = models.DateField()
 
 
