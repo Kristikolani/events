@@ -80,6 +80,6 @@ def edit(request, id):
 
 @login_required
 def profile(request):
-    user = EventModel.objects.all()[1]
+    user = EventModel.objects.all()[0]
     return render(request, "profile.html", {"user": user})
 
