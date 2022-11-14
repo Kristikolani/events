@@ -33,7 +33,7 @@ urlpatterns = [
     path('login/', accountsViews.login, name="login"),
     path('logout', accountsViews.logout, name="logout"),
     path('delete/<id>', accountsViews.delete, name="delete"),
-    path('edit/<id>', accountsViews.edit, name="edit"),
-    
+    path('edit/<id>', eventsViews.edit, name="edit"),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

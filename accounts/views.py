@@ -60,26 +60,7 @@ def delete(request, id):
 
 
 @login_required
-def edit(request, id):
-    if request.method == "POST":
-        event = request.POST.get('event')
-        # AUTH USER GET ID
-        event_obj = EventModel.objects.get(id=id)
-        # For storing the value in particular field in
-        # in Todo Model 'todos' field.
-        event_obj.events = event
-        event_obj.save()
-        print("Event", event, "EVENTS", event_obj)
-        return redirect('/show')
-    else:
-        # Return the particular value with id.
-        event = EventModel.objects.filter(id=id)
-        return render(request, 'edit.html', {'event': event})
-
-
-
-@login_required
 def profile(request):
-    user = EventModel.objects.all()[1]
+    user = EventModel.objects.all()[0]
     return render(request, "profile.html", {"user": user})
 

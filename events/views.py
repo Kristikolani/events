@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from events.forms import EventForm
 from events.models import EventModel
 from django.http import HttpRequest, HttpResponse
-from django.views.generic import CreateView
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -34,3 +34,23 @@ def add_event(request: HttpRequest) -> HttpResponse:
         "event_form.html",
         {"form": form},
     )
+
+
+@login_required
+def edit(request, id):
+    if request.method == "POST":
+        event = request.POST.get('event')
+        # AUTH USER GET ID
+        event_obj = EventModel.objects.get(id=id)
+        # For storing the value in particular field in
+        # in Todo Model 'todos' field.
+        event_obj.events = event
+        event_obj.save()
+        print("Event", event, "EVENTS", event_obj)
+        return redirect('/events')
+    else:
+        # Return the particular value with id.
+        event = EventModel.objects.filter(id=id)
+        return render(request, 'edit.html', {'event': event})
+
+
