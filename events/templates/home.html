@@ -24,7 +24,7 @@
             width: 100%;
             height: 100vh;
             background:
-            url( {{ event.image.url }} );
+            url(https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?cs=srgb&dl=pexels-teddy-yang-2263436.jpg&fm=jpg&_gl=1*1s037c7*_ga*MTMyMjUwNjAyMC4xNjY4NTI3ODky*_ga_8JE65Q40S6*MTY2ODUyNzg5Mi4xLjEuMTY2ODUyODA1My4wLjAuMA..);
             background-size:cover;
         }
           
@@ -239,14 +239,12 @@
                             {{ event.title }}
                         </h3>
                          
-<p>
-    {{ event.description }} 
-                    
-    
-</p>
- 
-  
-                        <a href="#">View Details</a>
+                    <p>
+                        {{ event.description }} 
+                    </p>
+                        <div>
+                        <a href="{% url 'event_detail'  0  %}">View Details</a>
+                        </div>
                     </div>
                     <div style="clear: both;"></div>
                 </li>

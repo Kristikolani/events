@@ -34,6 +34,6 @@ urlpatterns = [
     path('logout', accountsViews.logout, name="logout"),
     path('delete/<id>', accountsViews.delete, name="delete"),
     path('edit/<id>', eventsViews.edit, name="edit"),
-
+    path("<int:pk>/", eventsViews.event_detail, name="event_detail"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

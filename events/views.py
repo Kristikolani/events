@@ -42,8 +42,6 @@ def edit(request, id):
         event = request.POST.get('event')
         # AUTH USER GET ID
         event_obj = EventModel.objects.get(id=id)
-        # For storing the value in particular field in
-        # in Todo Model 'todos' field.
         event_obj.events = event
         event_obj.save()
         print("Event", event, "EVENTS", event_obj)
@@ -51,6 +49,9 @@ def edit(request, id):
     else:
         # Return the particular value with id.
         event = EventModel.objects.filter(id=id)
-        return render(request, 'edit.html', {'event': event})
+        return render(request, 'edit_event.html', {'event': event})
 
 
+def event_detail(request, pk):
+    events = EventModel.objects.filter(id=pk)
+    return render(request, "event_detail.html", {"events": events}) 
