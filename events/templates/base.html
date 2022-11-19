@@ -22,38 +22,42 @@
   </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="http://127.0.0.1:8000/">iDoEvents</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" href="{% url 'events' %}">Events</a>
-              <a class="nav-link" href="{% url 'about' %}">About us</a>
-              {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url 'add_event' %}">Add Event</a>
-                <a class="nav-link" href="{% url 'edit' 0 %}">Edit event</a>
-                <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-                <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
-              {% else %}
-                <a class="nav-link" href="{% url 'login' %}">Log In</a>
-                <a class="nav-link" href="{% url 'register' %}">Register</a>
-              {% endif %}
-                
+    <div style="background-color: black;">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="http://127.0.0.1:8000/">iDoEvents</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link" href="{% url 'events' %}">Events</a>
+                <a class="nav-link" href="{% url 'about' %}">About us</a>
+                {% if user.is_authenticated %}
+                  <a class="nav-link" href="{% url 'add_event' %}">Add Event</a>
+                  <a class="nav-link" href="{% url 'edit' 0 %}">Edit event</a>
+                  <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                  <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                {% else %}
+                  <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                  <a class="nav-link" href="{% url 'register' %}">Register</a>
+                {% endif %}
+                  
+              </div>
             </div>
           </div>
+      </nav>
+    
+
+      <main>
+        <div class="container">
+          {% block content %}{% endblock content %}
         </div>
-    </nav>
+      </main>
 
-    <main>
-      <div class="container">
-        {% block content %}{% endblock content %}
+      <div id="footer">
+        <span class="text-muted">Copyright &copy; 2022 - iDoEvents</span>
       </div>
-    </main>
-
-    <div id="footer">
-      <span class="text-muted">Copyright &copy; 2022 - iDoEvents</span>
+      
     </div>
   </body>
