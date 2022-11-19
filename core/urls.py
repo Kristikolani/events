@@ -25,15 +25,15 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path("register/", accountsViews.register, name="register"),
     path("admin/", admin.site.urls),
-    path("", eventsViews.home, name='home'),
-    path("about/", eventsViews.about, name='about'),
-    path("events/", eventsViews.events, name='events'),
+    path("", eventsViews.home, name="home"),
+    path("about/", eventsViews.about, name="about"),
+    path("events/", eventsViews.events, name="events"),
     path("add_event/", eventsViews.add_event, name="add_event"),
-    path("profile/", accountsViews.profile, name='profile'),
-    path('login/', accountsViews.login, name="login"),
-    path('logout', accountsViews.logout, name="logout"),
-    path('delete/<id>', accountsViews.delete, name="delete"),
-    path('edit/<id>', eventsViews.edit, name="edit"),
+    path("profile/", accountsViews.profile, name="profile"),
+    path("delete/<id>", accountsViews.delete, name="delete"),
+    path("edit/<id>", eventsViews.edit, name="edit"),
     path("<int:pk>/", eventsViews.event_detail, name="event_detail"),
+    path("accounts/login/", LoginView.as_view(), name="login"),
+    path("accounts/logout/", LogoutView.as_view(), name="logout"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
